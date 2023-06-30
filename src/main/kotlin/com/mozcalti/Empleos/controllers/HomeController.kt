@@ -9,7 +9,7 @@ class HomeController {
 
     @GetMapping("/")
     fun home(model: Model) : String {
-        model.addAttribute("titulo", "Bienvenido a el sistema de empleos")
+        model.addAttribute("titulo", "Inicio")
         return "home";
     }
 }

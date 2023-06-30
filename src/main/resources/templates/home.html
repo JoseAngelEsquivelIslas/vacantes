@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-</head>
+<html lang="es_MX" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="common/cdn-bootstrap::head"></head>
 <body>
-<h1 th:text="${titulo}"></h1>
+<main>
+    <nav th:replace="common/cdn-bootstrap::menu"></nav>
+</main>
 </body>
 </html>
