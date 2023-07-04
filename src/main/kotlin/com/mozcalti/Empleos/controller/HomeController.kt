@@ -1,4 +1,4 @@
-package com.mozcalti.Empleos.controllers
+package com.mozcalti.Empleos.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -10,6 +10,6 @@ class HomeController {
     @GetMapping("/")
     fun home(model: Model) : String {
         model.addAttribute("titulo", "Inicio")
-        return "home";
+        return "home"
     }
 }

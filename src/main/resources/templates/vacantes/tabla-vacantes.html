@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es_MX" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<div th:replace="common/cdn-bootstrap::head"></div>
+<body>
+<main class="d-grid gap-3">
+    <nav th:replace="common/cdn-bootstrap::menu"></nav>
+
+    <form th:replace="common/utils::buscar(@{/vacante}, ${listaEstados})"></form>
+
+    <div class="container">
+        <div class="row">
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-primary">SALARIO</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-primary">FECHA</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-primary">CATEGORIA</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-primary">ESTADO</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-primary">CONTRATACION</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+        <div class="row" th:if="${!listaVacantes.isEmpty()}">
+            <div class="col-4">
+                <div th:each="vacante : ${listaVacantes}" style="padding-bottom: 5px">
+                    <div class="card">
+                        <a href="#" class="btn btn btn-fix text-left">
+                            <div class="container">
+                                <div class="card-text"><small class="text-muted" th:text="hace + ' ' + ${fechaEndias} + ' ' + dias"></small></div>
+                            </div>
+                            <div class="card-body">
+                                <strong><h4 class="card-title" th:text="${vacante.perfil}"></h4></strong>
+                                <p th:text="${vacante.rangoSalarial}">$25,000 - $30,000</p>
+                                <ul>
+                                    <li>Algo</li>
+                                    <li>Algo</li>
+                                    <li>Algo</li>
+                                </ul>
+                                <p class="card-text" th:text="${vacante.descripcionVacante}">Some quick example text to
+                                    build on the
+                                    card title and make up the bulk of the card's content.</p>
+                                <strong><p th:text="${vacante.fkEstado.nombre}">CDMX</p></strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <p>Aqui se va a ver la descripcion de la vacante</p>
+            </div>
+        </div>
+        <div th:unless="${!listaVacantes.isEmpty()}" class="text-center">
+            <span>No se encontraron vacantes</span>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
