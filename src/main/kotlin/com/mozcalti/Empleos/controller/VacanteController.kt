@@ -16,7 +16,7 @@ import java.util.*
 
 
 @Controller
-@RequestMapping("/vacante")
+@RequestMapping("/vacantes")
 class VacanteController(
         private val vacanteService: VacanteService,
         private val estadoService: EstadoService

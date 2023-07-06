@@ -5,15 +5,15 @@
 <main class="d-grid gap-3">
     <nav th:replace="common/cdn-bootstrap::menu"></nav>
 
-    <form th:replace="common/utils::buscar(@{/vacante}, ${qryConsultado})"></form>
+    <form th:replace="common/utils::buscar(@{/vacantes}, ${qryConsultado})"></form>
 
     <div class="container">
         <div class="row">
-            <div th:replace="common/utils::dropdownBusqueda(@{/vacante}, ${listaSalario}, ${salarioSelect}, ${'s'})"></div>
-            <div th:replace="common/utils::dropdownBusqueda(@{/vacante}, ${listaFechas}, ${fechaSelect}, ${'f'})"></div>
-            <div th:replace="common/utils::dropdownBusqueda(@{/vacante}, ${listaCategorias},${categoriaSelect}, ${'c'})"></div>
-            <div th:replace="common/utils::dropdownBusqueda(@{/vacante}, ${listaTipoContratacion}, ${contratacionSelect}, ${'t'})"></div>
-            <div th:replace="common/utils::dropdownBusqueda(@{/vacante}, ${listaEstados}, ${estadoSelect}, ${'e'})"></div>
+            <div th:replace="common/utils::dropdownBusqueda(@{/vacantes}, ${listaSalario}, ${salarioSelect}, ${'s'})"></div>
+            <div th:replace="common/utils::dropdownBusqueda(@{/vacantes}, ${listaFechas}, ${fechaSelect}, ${'f'})"></div>
+            <div th:replace="common/utils::dropdownBusqueda(@{/vacantes}, ${listaCategorias},${categoriaSelect}, ${'c'})"></div>
+            <div th:replace="common/utils::dropdownBusqueda(@{/vacantes}, ${listaTipoContratacion}, ${contratacionSelect}, ${'t'})"></div>
+            <div th:replace="common/utils::dropdownBusqueda(@{/vacantes}, ${listaEstados}, ${estadoSelect}, ${'e'})"></div>
         </div>
 
         <div class="container">
